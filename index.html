@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="<b>mDPO</b>: Conditional Preference Optimization for Multimodal Large Language Models">
+
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="Multimodality, Preference Optimization, Vision Language Model, Multimodal Language Model, LLM, VLM, MLLM, DPO">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>mDPO</title>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-MFCT45H');</script>
+  <!-- End Google Tag Manager -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="icon" href="static/images/icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  </head>
+  <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MFCT45H" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://feiwang96.github.io/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://muirbench.github.io/">
+            MuirBench
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title"> mDPO: Conditional Preference Optimization for Multimodal Large Language Models</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+                <span class="author-block">
+                  <a href="https://feiwang96.github.io/" target="_blank"><font color="#B082C9"><b>Fei Wang</b></font></a><sup>1</sup>&emsp;
+                </span>
+                <span class="author-block">
+                  <a href="https://wzhouad.github.io/" target="_blank"><font color="#B082C9"><b>Wenxuan Zhou</b></font></a><sup>1</sup>&emsp;
+                </span>
+                <span class="author-block">
+                  <a href="https://jyhuang36.github.io/" target="_blank"><font color="#B082C9"><b>James Y. Huang</b></font></a><sup>1</sup>&emsp;
+                </span>
+                <span class="author-block">
+                  <a href="https://sites.google.com/site/xunannancy/" target="_blank"><font color="#B082C9"><b>Nan Xu</b></font></a><sup>1</sup>&emsp;
+                </span> 
+              <br>
+                <span class="author-block">
+                  <a href="https://sheng-z.github.io/" target="_blank"><font color="#B082C9"><b>Sheng Zhang</b></font></a><sup>3</sup>&emsp;
+                </span>
+                <span class="author-block">
+                  <a href="https://www.microsoft.com/en-us/research/people/hoifung/" target="_blank"><font color="#B082C9"><b>Hoifung Poon</b></font></a><sup>3</sup>&emsp;
+                </span>
+                <span class="author-block">
+                  <a href="https://muhaochen.github.io/" target="_blank"><font color="#B082C9"><b>Muhao Chen</b></font></a><sup>2</sup>&emsp;
+                </span>
+                </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">
+                      <sup>1</sup>USC&emsp;
+                      <sup>2</sup>UC Davis&emsp;
+                      <sup>3</sup>Microsoft Research
+                    </span>
+                    <!-- <span class="author-block">Institution Name<br>Conferance name and year</span> -->
+                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Equal Contribution</small></span> -->
+                  </div>
+
+                  <div class="content has-text-centered">
+                    <div class="publication-links">
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2406.11839" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+                  
+                  <span class="link-block">
+                    <a href="https://github.com/luka-group/mDPO" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                  </span>
+
+                <span class="link-block">
+                  <a href="https://x.com/fwang_nlp/status/1805209265293930532" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-twitter"></i>
+                  </span>
+                  <span>Twitter</span>
+                  </a>
+                </span>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-sixths">
+        <h2 class="title is-3">The Pitfall of Multimodal Preference Optimization</h2>
+        <div class="content has-text-justified">
+            <img src="static/images/problem.png" height="100%"/>
+
+            <br>
+          <p>
+            While DPO has shown effective for LLM alignment, it often struggles to achieve consistent improvements in multimodal scenarios. 
+            We find this is due to <b>unconditional preference</b> in multimodal preference optimization, where the image condition is overlooked.
+            Through controlled comparisons, we discover that multimodal LLMs can achieve similar performance even when all images are removed from the multimodal preference data during DPO.
+            We attribute this to a systematic gap between the theoretical expectations and practical implementations of the DPO objective in multimodal settings. 
+            While DPO aims to compute implicit rewards conditioned on all input modalities, it may <b>prioritize language-only preferences and overlook the image condition</b>, leading to suboptimal model performance and increased hallucination.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-sixths">
+        <h2 class="title is-3">mDPO: Conditional and Anchored Preference Optimization</h2>
+        <div class="content has-text-justified">
+            <img src="static/images/mdpo.png" height="100%"/>
+
+            <br>
+          <p>
+            We propose ᴍDPO, a multimodal DPO objective that prevents the over-prioritization of language-only preferences by <b>jointly optimizing text and image preferences</b>, with a <b>reward anchor</b> to prevent a decrease in the likelihood of the chosen instance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Paper Qualitative -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-sixths">
+        <h2 class="title is-3">Qualitative Results</h2>
+        <img src="static/images/example.png" width="100%"/>
+        <br>
+        <h2 class="content has-text-justified">
+          <b>Top</b>: When trained with standard DPO, Bunny often assumes the image description in the question is correct, responding accordingly, even if the question contains an adversarial premise regarding the image. 
+          In contrast, MDPO identifies the false premise in the question by referencing the image. 
+          <b>Bottom</b>: Bunny trained with standard DPO may disregard the image and provide an educated guess for the answer. Conversely, MDPO delivers a correct answer that is conditioned on the image.
+        </h2>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Paper Quantitative -->
+<section class="section hero ">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-sixths">
+        <h2 class="title is-3">Quantitative Results</h2>
+        <img src="static/images/results.png" height="90%"/>
+        <br>
+        <h2 class="content has-text-justified">
+          Experiments on different-size multimodal LLMs (Bunny-3B and LLaVA-7B) and widely used benchmarks show that ᴍDPO effectively addresses the unconditional preference issue and significantly improves model performance, particularly in <b>reducing hallucination</b>.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Citation</h2>
+      <pre><code>
+        @article{wang2024mdpo,
+          title={mDPO: Conditional Preference Optimization for Multimodal Large Language Models},
+          author={Wang, Fei and Zhou, Wenxuan and Huang, James Y and Xu, Nan and Zhang, Sheng and Poon, Hoifung and Chen, Muhao},
+          journal={arXiv preprint arXiv:2406.11839},
+          year={2024}
+        }
+      </code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
